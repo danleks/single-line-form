@@ -1,21 +1,7 @@
-# single-line-form
+# pricing-grid
 
-## Project setup
-```
-npm install
-```
+A single-line-form created to master css and vuejs.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## helpful links:
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
+* [Live version of the APP](https://laughing-ride-019ce2.netlify.com)
