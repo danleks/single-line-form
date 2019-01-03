@@ -1,4 +1,4 @@
-# pricing-grid
+# single-line-form
 
 A single-line-form created to master css and vuejs.
 
