@@ -1,28 +1,72 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="wrapper">
+       <HeroVideo />
+       <Form @show-summary="submit()" v-if="!summary" :form="form"/>
+       <Sumup :form="form" v-if="summary"/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import HeroVideo from './components/HeroVideo.vue';
+import Form from './components/Form.vue';
+import Sumup from './components/Sumup.vue';
+
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    HeroVideo,
+    Form,
+    Sumup,
   },
+  data() {
+    return {
+      summary: false,
+      form: {
+        city: '',
+        form: '',
+        to: '',
+        selected: '',
+        options: [
+        {text: '1 Guest', value: '1'},
+        {text: '2 Guest', value: '2'},
+        {text: '3 Guest', value: '3'},
+        {text: '4 Guest', value: '4'},
+        {text: '5 Guest', value: '5'},
+        {text: '6 Guest', value: '6'},
+      ],
+    }
+  }
+  },
+
+  methods: {
+    submit() {
+      this.summary = true;
+    }
+  }
 };
 </script>
 
 <style lang="scss">
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.wrapper {
+  height: 100vh;
 }
 </style>
