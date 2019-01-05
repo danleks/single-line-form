@@ -10,10 +10,11 @@
             <input v-model="form.to" type="date" id="to">
 
             <select name="guest" id="guest" v-model="form.selected">
+                <option disabled value="">Select number of guests</option>
                 <option v-for="option in form.options" :key="option.value" :value="option.value">{{ option.text }}</option>
             </select>
 
-            <button @click="$emit('show-summary')" type="submit">Search</button>
+            <button @click="$emit('show-summary')" type="submit">Submit</button>
         </form>
     </div>
 </template>
