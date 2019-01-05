@@ -1,7 +1,9 @@
 <template>
 <div class="videoWrapper">
     <!-- <div class="overlay" /> -->
-    <video src="../assets/heroVideo.mp4" autoplay loop></video>
+    <video autoplay loop muted playsinline>
+        <source src="../assets/heroVideo.mp4" type="video/mp4"> Your browser doesn't support video tag. I suggest you upgrade your browser.
+    </video>
     </div>
 </template>
 

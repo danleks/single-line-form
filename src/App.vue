@@ -3,7 +3,10 @@
     <div class="wrapper">
        <HeroVideo />
        <Form @show-summary="submit()" v-if="!summary" :form="form"/>
-       <Sumup :form="form" v-if="summary"/>
+       <Sumup
+       @close-booking="close()"
+       :form="form"
+        v-if="summary"/>
     </div>
   </div>
 </template>
@@ -27,7 +30,7 @@ export default {
       summary: false,
       form: {
         city: '',
-        form: '',
+        from: '',
         to: '',
         selected: '',
         options: [
@@ -45,6 +48,15 @@ export default {
   methods: {
     submit() {
       this.summary = true;
+    },
+
+    close() {
+      this.summary = false;
+      this.form.city = '';
+      this.form.from = '';
+      this.form.to = '';
+      this.form.selected = '';
+
     }
   }
 };
